@@ -815,6 +815,7 @@ h3.my-profession
         display: block;
         margin-left: 0;
     }
+   
 }
 
 @media (max-width:991px)
@@ -836,6 +837,10 @@ h3.my-profession
         flex: 0 0 100%;
         max-width: 100%;
     }
+        .about .about-content .personal-info .info-item p
+    {
+        word-break: break-word;
+    }
 }
 
 @media (max-width:767px)
@@ -852,5 +857,9 @@ h3.my-profession
     {
         flex: 0 0 100%;
         max-width: 100%;
+    }
+        .about .about-content .personal-info .info-item p
+    {
+        word-break: break-word;
     }
 }
