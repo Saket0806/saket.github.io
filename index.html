@@ -4,573 +4,1085 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saket Tiwari (Sofware Engineer)</title>
+    <title>Saket Tiwari | Senior Software Engineer</title>
     <link rel="icon" type="image/x-icon" href="images/SEF.png">
-    <!---CSS Files-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/skins/color-1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-
-    <!-- ======= Style Switcher ====== -->
     <link rel="stylesheet" href="css/skins/color-1.css" class="alternate-style" title="color-1" disabled>
     <link rel="stylesheet" href="css/skins/color-2.css" class="alternate-style" title="color-2" disabled>
     <link rel="stylesheet" href="css/skins/color-3.css" class="alternate-style" title="color-3" disabled>
     <link rel="stylesheet" href="css/skins/color-4.css" class="alternate-style" title="color-4" disabled>
     <link rel="stylesheet" href="css/skins/color-5.css" class="alternate-style" title="color-5" disabled>
     <link rel="stylesheet" href="css/style-switcher.css">
+    <style>
+        /* ===== SECTION SUB TITLE ===== */
+        .section-sub-title {
+            font-size: 17px;
+            font-weight: 600;
+            margin: 28px 0 10px 0;
+            color: var(--text-black-900, #222);
+            border-left: 3px solid var(--skin-color, #ec1839);
+            padding-left: 10px;
+        }
+
+        /* ===== COMPACT SKILLS TABLE ===== */
+        .skills-compact-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 13.5px;
+        }
+        .skills-compact-table tr {
+            border-bottom: 1px solid rgba(0,0,0,0.07);
+        }
+        .skills-compact-table tr:last-child {
+            border-bottom: none;
+        }
+        .skills-compact-table td.skill-label {
+            font-weight: 700;
+            color: var(--skin-color, #ec1839);
+            white-space: nowrap;
+            padding: 8px 16px 8px 0;
+            vertical-align: top;
+            width: 200px;
+        }
+        .skills-compact-table td.skill-values {
+            color: var(--text-black-700, #444);
+            padding: 8px 0;
+            line-height: 1.7;
+        }
+
+        /* ===== SOFT SKILLS ===== */
+        .soft-skills-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .soft-skill-tag {
+            border: 1px solid var(--skin-color, #ec1839);
+            color: var(--skin-color, #ec1839);
+            padding: 5px 13px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        /* ===== LANDSCAPE EXPERIENCE / EDUCATION ===== */
+        .landscape-timeline {
+            width: 100%;
+            margin-top: 10px;
+        }
+        .landscape-item {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 20px;
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            position: relative;
+        }
+        .landscape-item:last-child {
+            border-bottom: none;
+        }
+        .landscape-left {
+            text-align: right;
+            padding-right: 20px;
+            border-right: 2px solid var(--skin-color, #ec1839);
+            position: relative;
+        }
+        .landscape-left::after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            background: var(--skin-color, #ec1839);
+            border-radius: 50%;
+        }
+        .landscape-left .date {
+            font-size: 12px;
+            color: var(--skin-color, #ec1839);
+            font-weight: 600;
+        }
+        .landscape-left .company {
+            font-size: 12px;
+            color: var(--text-black-600, #777);
+            margin-top: 4px;
+            font-style: italic;
+        }
+        .landscape-right .role-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-black-900, #222);
+            margin: 0 0 4px 0;
+        }
+        .landscape-right .role-client {
+            font-size: 12px;
+            color: var(--skin-color, #ec1839);
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+        .landscape-right ul {
+            margin: 0;
+            padding-left: 18px;
+            color: var(--text-black-700, #555);
+            font-size: 13.5px;
+            line-height: 1.7;
+        }
+        .landscape-right ul li {
+            margin-bottom: 4px;
+        }
+
+        /* ===== PERSONAL INFO CARDS (bottom) ===== */
+        .personal-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 14px;
+            margin-top: 12px;
+        }
+        .info-card {
+            background: var(--bg-black-50, #f9f9f9);
+            border-radius: 8px;
+            padding: 14px 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .info-card .ic-icon {
+            color: var(--skin-color, #ec1839);
+            font-size: 16px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+        .info-card .ic-body .ic-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-black-600, #888);
+            letter-spacing: 0.5px;
+        }
+        .info-card .ic-body .ic-value {
+            font-size: 13.5px;
+            color: var(--text-black-900, #222);
+            margin-top: 2px;
+            font-weight: 500;
+        }
+        .info-card .ic-body .ic-value a {
+            color: var(--skin-color, #ec1839);
+            text-decoration: none;
+        }
+
+        /* ===== PROJECT CARDS ===== */
+        .proj-cards-wrapper {
+            padding: 0 15px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .proj-card {
+            background: var(--bg-black-50, #f9f9f9);
+            border-radius: 12px;
+            border-left: 4px solid var(--skin-color, #ec1839);
+            box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .proj-card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px 22px 14px;
+            background: var(--bg-black-100, #f0f0f0);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .proj-card-icon {
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
+            background: var(--skin-color, #ec1839);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 18px;
+        }
+        .proj-card-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-black-900, #111);
+            margin-bottom: 6px;
+        }
+        .proj-card-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 12px;
+            color: var(--text-black-600, #777);
+        }
+        .proj-card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .proj-badge {
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .proj-badge-full {
+            background: rgba(236,24,57,0.1);
+            color: var(--skin-color, #ec1839);
+        }
+        .proj-card-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            padding: 12px 22px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .proj-card-tech span {
+            background: var(--skin-color, #ec1839);
+            color: #fff;
+            padding: 3px 11px;
+            border-radius: 20px;
+            font-size: 11.5px;
+            font-weight: 500;
+        }
+        .proj-card-body {
+            padding: 14px 22px 10px;
+            font-size: 13.5px;
+            color: var(--text-black-700, #555);
+            line-height: 1.7;
+        }
+        .proj-card-body a {
+            color: var(--skin-color, #ec1839);
+            text-decoration: none;
+        }
+        .proj-card-outcomes {
+            padding: 12px 22px 14px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+        .proj-outcome-title, .proj-role-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-black-900, #222);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .proj-outcome-title i, .proj-role-title i {
+            color: var(--skin-color, #ec1839);
+        }
+        .proj-outcomes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 10px;
+        }
+        .proj-outcome-item {
+            background: var(--bg-black-100, #ebebeb);
+            border-radius: 8px;
+            padding: 10px 14px;
+            text-align: center;
+        }
+        .proj-outcome-val {
+            display: block;
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--skin-color, #ec1839);
+        }
+        .proj-outcome-label {
+            display: block;
+            font-size: 11px;
+            color: var(--text-black-600, #777);
+            margin-top: 2px;
+        }
+        .proj-card-roles {
+            padding: 12px 22px 18px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+        .proj-card-roles ul {
+            margin: 0;
+            padding-left: 18px;
+            font-size: 13.5px;
+            color: var(--text-black-700, #555);
+            line-height: 1.8;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .landscape-item {
+                grid-template-columns: 1fr;
+            }
+            .landscape-left {
+                text-align: left;
+                border-right: none;
+                border-left: 2px solid var(--skin-color, #ec1839);
+                padding-left: 14px;
+                padding-right: 0;
+            }
+            .landscape-left::after {
+                right: auto;
+                left: -6px;
+            }
+            .skills-compact-table td.skill-label {
+                width: auto;
+            }
+        }
+        
+    </style>
 </head>
 <body>
-    <!---========MAIN Container Start====-->
+
 <div class="main-container">
- <!---========Aside Start====-->
- <div class="aside">
-    <div class="logo">
-        <a href="#"><span>S</span>aket</a>
-    </div>
-    <div class="nav-toggler">
-        <span>
 
-        </span>
+    <!-- ===== ASIDE ===== -->
+    <div class="aside">
+        <div class="logo">
+            <a href="#"><span>S</span>aket</a>
+        </div>
+        <div class="nav-toggler">
+            <span></span>
+        </div>
+        <ul class="nav">
+            <li><a href="#home" class="active"><i class="fa fa-home"></i>Home</a></li>
+            <li><a href="#about"><i class="fa fa-user"></i>About</a></li>
+            <li><a href="#services"><i class="fa fa-list"></i>Services</a></li>
+            <li><a href="#portfolio"><i class="fa fa-briefcase"></i>Projects</a></li>
+            <li><a href="#contact"><i class="fa fa-comments"></i>Contact</a></li>
+        </ul>
     </div>
-    <ul class="nav">
-        <li><a href="#home" class="active"><i class="fa fa-home"></i>Home</a></li>
-        <li><a href="#about"><i class="fa fa-user"></i>About</a></li>
-        <li><a href="#services"><i class="fa fa-list"></i>Services</a></li>
-        <li><a href="#portfolio"><i class="fa fa-briefcase"></i>Portfolio</a></li>
-        <li><a href="#contact"><i class="fa fa-comments"></i>Contact</a></li>
-    </ul>
- </div>
-</div>
-<!---========Aside End====-->
-<!---========Main Content Start====-->
-<div class="main-content">
-<!---========Home Section Start====-->
-<section class="home active section" id="home">
-<div class="container">
-    <div class="row">
-        <div class="home-info padd-15">
-            <h3 class="hello">Hi. I'm <span class="name">Saket Tiwari.</span></h3>
-            <h3 class="my-profession">I' m a <span class="typing">Software Engineer</span></h3>
-            <p>Innovative, task-driven professional in Software Development.Proficient in Developing & Design Web Applications using different technologies, 
-                user interfaces, writing & testing Codes, and implementing the feature based on the requirements/feedback.</p>
-            <a href="https://drive.google.com/file/d/1pubIkaucLN2lvWJBe_-fC7QCcOHDPHiv/view?usp=drivesdk" class="btn">Download CV</a>
-        </div>
-        <div class="home-img padd-15">
-            <img src="images/saket.jpg" alt="Saket Tiwari">
-        </div>
-    </div>
-</div>
-</section>
-    <!---========Home Section End====-->
-    <!---========About Section End====-->
-<section class="about section" id="about">
-    <div class="container">
-        <div class="row">
-            <div class="section-title padd-15">
-                <h2>About Me</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="about-content padd-15">
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <div class="main-content">
+
+        <!-- ===== HOME ===== -->
+        <section class="home active section" id="home">
+            <div class="container">
                 <div class="row">
-                    <div class="about-text padd-15">
-                        <h3>I'm Saket Tiwari(<span>Software Engineer</span>)</h3>
+                    <div class="home-info padd-15">
+                        <h3 class="hello">Hi, I'm <span class="name">Saket Tiwari.</span></h3>
+                        <h3 class="my-profession">I'm a <span class="typing">Senior Software Engineer</span></h3>
+
+          
                         <p>
-                      Experienced Java Developer with<span style="color:blue;font-weight:bold"> 2+ years</span> of expertise in designing and developing robust software solutions.
-                            Proven ability to deliver efficient code and collaborate effectively in cross-functional teams. 
-                            Strong problem-solving skills and a commitment to staying current with emerging technologies. 
-                            Eager to contribute my skills to drive innovation and achieve excellence in software development.
+                            <Strong>Senior Software Engineer </Strong>with 4+ years of experience building distributed, high-throughput systems
+                            across FinTech, HealthTech, and GovTech domains. Specialized in Kafka-driven event pipelines,
+                            Redis caching, and Spring Boot microservices &mdash; delivering production-grade platforms from inception to deployment.
                         </p>
+                        
+                        <a href="https://drive.google.com/file/d/1pubIkaucLN2lvWJBe_-fC7QCcOHDPHiv/view?usp=drivesdk" class="btn">Download CV</a>
+                    </div>
+                    <div class="home-img padd-15">
+                        <img src="images/saket.jpg" alt="Saket Tiwari">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- ===== ABOUT ===== -->
+        <section class="about section" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="section-title padd-15">
+                        <h2>About Me</h2>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="personal-info padd-15">
+                    <div class="about-content padd-15">
+
+                        <!-- Intro -->
                         <div class="row">
-                            <div class="info-item padd-15">
-                                <p>Birthday : <span>06 June 1998</span></p>
-                            </div>
-                            <div class="info-item padd-15">
-                                <p>Age : <span>25</span></p>
-                            </div>
-                            <div class="info-item padd-15">
-                                <p>Linkedin:<span><a>https://www.linkedin.com/in/saket-tiwari-8104a419a</a></span></p>
-                            </div>
-                            <div class="info-item padd-15">
-                                <p>Email : <span>tsaket41@gmail.com</span></p>
-                            </div>
-                            
-                            <div class="info-item padd-15">
-                                <p>Degree : <span>Bachelor Of Engineering(CSE)</span></p>
-                            </div>
-                            <div class="info-item padd-15">
-                                <p>Phone : <span>+91 8962932340</span></p>
-                            </div>
-                            <div class="info-item padd-15">
-                                <p>City: <span>Kareli, M.P</span></p>
-                            </div>
-                            <div class="info-item padd-15">
-                                <p>Current City: <span>Jaipur, Rajasthan </span></p>
-                            </div>
-                            <div class="info-item padd-15">
-                                <p>Freelance : <span>Available</span></p>
+                            <div class="about-text padd-15">
+                                <h3>I'm Saket Tiwari &mdash; <span>Senior Software Engineer</span></h3>
+                                <p>
+                                    Senior Software Engineer with <span style="color:var(--skin-color);font-weight:bold">4+ years</span>
+                                    of hands-on experience designing and delivering scalable, high-performance backend systems.
+                                    Specialized in event-driven microservices architecture, distributed caching, and cloud-native
+                                    development across FinTech, HealthTech, and GovTech domains. Known for a strong ownership
+                                    mindset, clean code practices, and driving results in Agile environments &mdash; from architecture
+                                    to production deployment.
+                                </p>
                             </div>
                         </div>
+
+                        <!-- ===== TECHNICAL SKILLS ===== -->
                         <div class="row">
-                            <div class="buttons">
-                                <a href="#contact" data-section-index="1" class="btn hire-me">Hire Me</a>
+                            <div class="padd-15" style="width:100%">
+                                <p class="section-sub-title"><i class="fa fa-code"></i>&nbsp; Technical Skills</p>
+                                <table class="skills-compact-table">
+                                    <tr>
+                                        <td class="skill-label">Core Languages</td>
+                                        <td class="skill-values">Java 8 / 11 / 17 / 21 &nbsp;|&nbsp; Data Structures &amp; Algorithms &nbsp;|&nbsp; OOPs &nbsp;|&nbsp; Multithreading &amp; Concurrency</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="skill-label">Backend Technologies</td>
+                                        <td class="skill-values">Spring Boot &nbsp;|&nbsp; Spring MVC &nbsp;|&nbsp; Spring Security (JWT, OAuth2) &nbsp;|&nbsp; Spring Data JPA &nbsp;|&nbsp; Hibernate &nbsp;|&nbsp; REST APIs &nbsp;|&nbsp; WebSocket &nbsp;|&nbsp; WebRTC &nbsp;|&nbsp; Microservices Architecture &nbsp;|&nbsp; Resilience4j &nbsp;|&nbsp; Spring Cloud &nbsp;|&nbsp; API Gateway &nbsp;|&nbsp; Eureka</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="skill-label">Architecture Patterns</td>
+                                        <td class="skill-values">Event-Driven Architecture &nbsp;|&nbsp; CQRS &nbsp;|&nbsp; Saga Pattern &nbsp;|&nbsp; Distributed Systems &nbsp;|&nbsp; Domain-Driven Design (DDD) &nbsp;|&nbsp; System Design</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="skill-label">Databases &amp; Caching</td>
+                                        <td class="skill-values">PostgreSQL &nbsp;|&nbsp; MySQL &nbsp;|&nbsp; MongoDB &nbsp;|&nbsp; Redis</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="skill-label">Cloud &amp; DevOps</td>
+                                        <td class="skill-values">Docker &nbsp;|&nbsp; Kubernetes &nbsp;|&nbsp; Jenkins &nbsp;|&nbsp; CI/CD Pipelines &nbsp;|&nbsp; Linux &nbsp;|&nbsp; AWS EC2 &nbsp;|&nbsp; AWS S3 &nbsp;|&nbsp; AWS RDS</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="skill-label">Message Brokers</td>
+                                        <td class="skill-values">Apache Kafka</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="skill-label">Build &amp; Version Control</td>
+                                        <td class="skill-values">Maven &nbsp;|&nbsp; Gradle &nbsp;|&nbsp; Git / GitHub</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="skill-label">Testing &amp; API Tools</td>
+                                        <td class="skill-values">Postman &nbsp;|&nbsp; Swagger / OpenAPI &nbsp;|&nbsp; SonarQube &nbsp;|&nbsp; JUnit / Mockito &nbsp;|&nbsp; Rest Assured &nbsp;|&nbsp; TestContainers</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="skill-label">Logging &amp; Monitoring</td>
+                                        <td class="skill-values">SLF4J &nbsp;|&nbsp; Log4j2 &nbsp;|&nbsp; ELK Stack &nbsp;|&nbsp; Splunk &nbsp;|&nbsp; Micrometer &nbsp;|&nbsp; Prometheus &nbsp;|&nbsp; Grafana &nbsp;|&nbsp; Distributed Tracing</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="skill-label">Productivity &amp; Agile</td>
+                                        <td class="skill-values">Cursor IDE &nbsp;|&nbsp; GitHub Copilot &nbsp;|&nbsp; JIRA &nbsp;|&nbsp; Confluence &nbsp;|&nbsp; Agile / Scrum &nbsp;|&nbsp; Sprint Planning &nbsp;|&nbsp; Backlog Grooming</td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
-                    </div>
-                    <div class="skills padd-15">
+
+                        <!-- ===== SOFT SKILLS ===== -->
                         <div class="row">
-                            <div class="skill-item padd-15">
-                                <h5>Java 8, J2EE</h5>
-                                <div class="progress">
-                                    <div class="progress-in" style="width: 76%";></div>
-                                    <div class="skill-percent">90%</div>
+                            <div class="padd-15" style="width:100%">
+                                <p class="section-sub-title"><i class="fa fa-star"></i>&nbsp; Soft Skills</p>
+                                <div class="soft-skills-wrapper">
+                                    <span class="soft-skill-tag">Strong Ownership Mindset</span>
+                                    <span class="soft-skill-tag">Problem Solving</span>
+                                    <span class="soft-skill-tag">Team Collaboration</span>
+                                    <span class="soft-skill-tag">Technical Mentorship</span>
+                                    <span class="soft-skill-tag">Stakeholder Communication</span>
+                                    <span class="soft-skill-tag">Requirement Gathering</span>
+                                    <span class="soft-skill-tag">Analytical Thinking</span>
+                                    <span class="soft-skill-tag">Attention to Detail</span>
+                                    <span class="soft-skill-tag">Self-Motivated</span>
+                                    <span class="soft-skill-tag">Adaptability</span>
                                 </div>
                             </div>
-
-                            <div class="skill-item padd-15">
-                                <h5>Rest API's, Spring MVC, Spring Boot, Microservices</h5>
-                                <div class="progress">
-                                    <div class="progress-in" style="width: 88%";></div>
-                                    <div class="skill-percent">85%</div>
-                                </div>
-                            </div>
-
-                            <div class="skill-item padd-15">
-                                <h5>MySQL, Postgresql, Hibernate/Jpa</h5>
-                                <div class="progress">
-                                    <div class="progress-in" style="width: 80%";></div>
-                                    <div class="skill-percent">80%</div>
-                                </div>
-                            </div>
-
-                            <div class="skill-item padd-15">
-                                <h5>Swagger, Postman, Git/Github , Json & Gson</h5>
-                                <div class="progress">
-                                    <div class="progress-in" style="width: 89%";></div>
-                                    <div class="skill-percent">90%</div>
-                                </div>
-                            </div>
-                            <div class="skill-item padd-15">
-                                <h5>Camunda Bpmn & Linux/Windows</h5>
-                                <div class="progress">
-                                    <div class="progress-in" style="width: 89%";></div>
-                                    <div class="skill-percent">65%</div>
-                                </div>
-                            </div>
-
-
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="education padd-15">
-                        <h3 class="title">Education</h3>
+
+                        <!-- ===== WORK EXPERIENCE (Landscape) ===== -->
                         <div class="row">
-                            <div class="timeline-box padd-15">
-                                <div class="timeline shadow-dark">
-                                    <!-- ==== timeline item ======= -->
-                                    <div class="timeline-item">
-                                    <div class="circle-dot"></div>
-                                    <h3 class="timeline-date">
-                                        <i class="fa fa-calendar"></i> 2016 - 2020
-                                    </h3>
-                                    <h4 class="timeline-title">BE (Computer Science)</h4>
-                                    <p class="timeline-text">I did my engineering in BE in CS with <b>72.32 CGPA</b> from Shri Ram Group Of Institutions Engineering College, Jabalpur under Rajiv Gandhi Proudyogiki Vishwavidyalaya, Bhopal </p>
-                                    </div>
-                                    <!-- ==== timeline item ======= -->
-                                    <div class="timeline-item">
-                                        <div class="circle-dot"></div>
-                                        <h3 class="timeline-date">
-                                            <i class="fa fa-calendar"></i> 2015 - 2016
-                                        </h3>
-                                        <h4 class="timeline-title">12th (Higher Secondary)</h4>
-                                        <p class="timeline-text">I have completed intermediate in Science(PCM - Physics, Chemistry and Math) from Khajanchi Ramkalibai English Medium School, Kareli under M.P Board.
-                                        </p>
-                                        </div>
-                                        <!-- ==== timeline item ======= -->
-                                    <div class="timeline-item">
-                                        <div class="circle-dot"></div>
-                                        <h3 class="timeline-date">
-                                            <i class="fa fa-calendar"></i> 2015 - 2016
-                                        </h3>
-                                        <h4 class="timeline-title">10th (Intermediate)</h4>
-                                        <p class="timeline-text">I have completed 10th in General Subject(PCM - Physics, Chemistry, Biology, Mathematics, English and Hindi) from Smt. Prema Devi Kharya English School, Kareli under CBSE Board. 
-                                        </p>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="experience padd-15">
-                        <h3 class="title">Experience</h3>
-                        <div class="row">
-                            <div class="timeline-box padd-15">
-                                <div class="timeline shadow-dark">
-                                    <!-- ==== timeline item ======= -->
-                                    <div class="timeline-item">
-                                    <div class="circle-dot"></div>
-                                    <h3 class="timeline-date">
-                                        <i class="fa fa-calendar"></i> 04/2022 - Present
-                                    </h3>
-<!--                                     <h4 class="timeline-title">Futuretek Commerce Pvt Ltd.( GetePay )</h4> -->
-                                        <h4 class="timeline-title">  <a href="https://getepay.in/">- Futuretek Commerce Pvt Ltd.( GetePay )</a></h4>
-                                    <p class="timeline-text">
-                                        - Collaborate closely with other engineers and become a valued member of an
-                                        autonomous, cross-functional team. <br>
+                            <div class="padd-15" style="width:100%">
+                                <p class="section-sub-title"><i class="fa fa-briefcase"></i>&nbsp; Work Experience</p>
+                                <div class="landscape-timeline">
 
-                                       - Contribute to the design, development, and maintenance of Java applications by actively
-                                        participating in coding, testing, and debugging processes. <br>
-
-                                      -Design and implement RESTful APIs, ensuring they are scalable, secure, and well-documented
-                                       for seamless payment integration with other systems. <br>
-                                        
-                                    -Effectively oversee and enhance database interactions, encompassing tasks such as data
-                                    modeling, optimizing SQL queries, and tuning database performance.
-                                    
-                              
-                                    </div>
-                                   <!-- ==== previous job experience======= -->
-                                      <div class="timeline-item">
-                                        <div class="circle-dot"></div>
-                                        <h4 class="timeline-date">
-                                            <i class="fa fa-calendar"></i> Previous Organization - 2022/01- 2023/03
-                                        </h4>
-                                           
-                                         <h4 class="timeline-title"> <a href="https://www.mlesystems.com/">- MLE SYSTEMS</a></h4>
-                                        </div>
-                                    
-                                    <!-- ==== timeline item ======= -->
-                                    <div class="timeline-item">
-                                        <div class="circle-dot"></div>
-                                        <h4 class="timeline-date">
-                                            <i class="fa fa-calendar"></i> CERTIFICATION
-                                        </h4>
-                                        <h4 class="timeline-title">Pega CSA 8.7 - 2022 -JULY</h4>
-                                        
-<!--                                         <p class="timeline-text">Design & Development of the Business
-                                            Process Management(BPM) components
-                                            which include PRPC Flows, and Business
-                                            Rules for application flow.
-                                            </p> -->
-                                        </div>
-                                        <!-- ==== timeline item ======= -->
-                                    <div class="timeline-item">
-                                        <div class="circle-dot"></div>
-                
-                                        <h4 class="timeline-title">Service Now CSA - Sandiego</h4>
-<!--                                         <p class="timeline-text">IT professionals operating a service desk/help desk can use ServiceNow products to organize their help cases, 
-                                            problem management and instance management. 
-                                            ServiceNow is able to assist with machine learning and artificial intelligence processes..</p> -->
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-    <!---========About Section End====-->
-    <!---========Service Section Start====-->
-<section class="service section" id="services">
-    <div class="container">
-        <div class="row">
-            <div class="section-title padd15">
-                <h2>Service</h2>
-            </div>
-        </div>
-        <div class="row">
-             <!---========Service Item Start====-->
-             <div class="service-item padd-15">
-                <div class="service-item-inner">
-                    <div class="icon">
-                        <i class="fa fa-mobile-alt"></i>
-                    </div>
-                    <h4>Software Engineer</h4>
-                    <p>Checkout My Work and Skills and feel free to get in touch if you want to work with me.</p>
-                </div>
-             </div>
-             <div class="service-item padd-15">
-                <div class="service-item-inner">
-                    <div class="icon">
-                        <i class="fa fa-laptop-code"></i>
-                    </div>
-                    <h4>Software Developer</h4>
-                    <p>Checkout My Work and Skills and feel free to get in touch if you want to work with me.</p>
-                </div>
-             </div>
-             <div class="service-item padd-15">
-                <div class="service-item-inner">
-                    <div class="icon">
-                        <i class="fa fa-palette"></i>
-                    </div>
-                    <h4>Java Developer</h4>
-                    <p>Checkout My Work and Skills and feel free to get in touch if you want to work with me.</p>
-                </div>
-             </div>
-             <div class="service-item padd-15">
-                <div class="service-item-inner">
-                    <div class="icon">
-                        <i class="fa fa-code"></i>
-                    </div>
-                    <h4>Web Developer</h4>
-                    <p>Checkout My Work and Skills and feel free to get in touch if you want to work with me.</p>
-                </div>
-             </div>
-             <div class="service-item padd-15">
-                <div class="service-item-inner">
-                    <div class="icon">
-                        <i class="fa fa-search"></i>
-                    </div>
-                    <h4>Backend Developer</h4>
-                    <p>Checkout My Work and Skills and feel free to get in touch if you want to work with me.</p>
-                </div>
-             </div>
-             <div class="service-item padd-15">
-                <div class="service-item-inner">
-                    <div class="icon">
-                        <i class="fa fa-bullhorn"></i>
-                    </div>
-                    <h4>Associate Software Engineer</h4>
-                    <p>Checkout My Work and Skills and feel free to get in touch if you want to work with me.</p>
-                </div>
-             </div>
-             <!---========Service Item Endd====-->
-        </div>
-    </div>
-</section>
-<!---========Service Section End====-->
-<!---========Portfolio Section Start====-->
-<section class="portfolio section" id="portfolio">
-    <div class="container">
-        <div class="row">
-            <div class="section-title padd-15">
-                <h2>Portfolio</h2>
-            </div>
-        </div>
-        <div class="row">
-<!-- Himuda -->
-            <div class="portfolio-heading padd-15">
-                <h1>Projects :</h1> <br>
-<!--                 <h3>GetePay Organization Projects -:</h3> -->
-           <h3 class="timeline-title">  <a href="https://getepay.in/">- Futuretek Commerce Pvt Ltd.( GetePay )</a></h3>
-             <h4>Himuda -:</h4>
-            <p><strong>Tech Stack</strong>- Java 8, Spring Boot, Jpa, Mysql, React Js.<br>
--The Himuda Employee Payment System streamlines employee and employer records, calculates
-PF with interest, and secures payments via Getepay for the Himachal State Urban Development
-Authority, ensuring transparency and compliance with robust reporting.<br>
-<strong>Role & Responsibility</strong>strong> - A Java developer's responsibilities include API development, software
-maintenance, debugging, and ensuring Java-based APIs' stability, performance, and bug-free
-operation. </p>
-             <br>
- </div>
-<!--             add himuda project images  -->
-
-
-            <!--  Municipal Corporation -->
-               <div class="portfolio-heading padd-15">
-                <h4>Municipal Corporation-:</h4>
-                   -<strong>Tech Stack</strong> - Java 8, Spring Boot, Spring mvc , Hibernate, Mysql, Web Technologies etc.<br>
--The Municipal Corporation Service Management System is a web-based platform that
-streamlines municipal services, enabling efficient management of customer details, billing, and
-payments, with easy customer access via the "Getepay" portal for Water and Electricity services.<br>
--<strong>Role & Responsibility</strong>strong> - A Java developer specializing in API development, software maintenance,
-and debugging takes charge of Java-based APIs, maintains their stability, enhances
-performance, and ensures bug-free software application operation.
-                    <br>
-                    <br>
-            </div>
-
-<!--             Pg_GetePay Portal -->
-
-                  <div class="portfolio-heading padd-15">
-                <h4>Pg_GetePay Potal-:</h4>
-                  -<strong>Tech Stack</strong>- Java 8, Spring Boot, Spring Mvc , Hibernate, Mysql, Web Technologies etc.<br>
-The GetEPay portal is an innovative online platform designed to streamline and enhance
-electronic payment processes. This project aims to provide users with a user-friendly interface
-that facilitates secure and efficient financial transactions. With a focus on excellent user
-experience, GetEPay aims to simplify digital payments while ensuring robust security measures.<br>
--<strong>Role & Responsibility</strong>strong> - A Java developer in charge of API development, software maintenance,
-and debugging oversees Java-based APIs to maintain stability, optimize performance, and
-ensure bug-free software operation.
-                      <br>
-                       <br>
-            </div>
-
-<!--             Employee Portal -->
-            <div class="portfolio-heading padd-15">
-<!--                 
-                 <h3> Mle Systems Organization Projects -:</h3> -->
-                <h3 class="timeline-title"> <a href="https://www.mlesystems.com/">- MLE SYSTEMS</a></h3>
-                <h4>Employee Portal -:</h4>
-           
-       
-<p><strong>Tech Stack</strong>- Java 8, Spring Boot, Jpa, Postgresql, React Js.<br>
--The Employee Portal is software that efficiently manages employee information and automates
-salary-related tasks. It calculates wages, prints and delivers checks, and includes Modules for
-attendance, reimbursement, and leave management.<br>
--<strong>Role & Responsibility</strong>strong> - The project's responsibilities encompass overseeing development,
-resource management, ensuring quality control, and achieving project objectives. </p>
-         </div>
-        <div class="row">
-            <!---========portfolio item Start====-->
-            <div class="portfolio-item padd-15">
-                <div class="portfolio-item-inner shadow-dark">
-                    <div class="portfolio-img">
-                       <a href="https://github.com/Saket0806"><img src="images/portfolio/MLE_Login_1.png" alt=""  ></a>
-                    </div>
-                </div>
-            </div>
-            <!---========portfolio item End====-->
-             <!---========portfolio item Start====-->
-             <div class="portfolio-item padd-15">
-                <div class="portfolio-item-inner shadow-dark">
-                    <div class="portfolio-img">
-                        <a href="https://github.com/Saket0806"><img src="images/portfolio/MLE_Forget_password2.png" alt=""  ></a>
-                    </div>
-                </div>
-            </div>
-            <!---========portfolio item End====-->
-             <!---========portfolio item Start====-->
-             <div class="portfolio-item padd-15">
-                <div class="portfolio-item-inner shadow-dark">
-                    <div class="portfolio-img">
-                        <a href="https://github.com/Saket0806"><img src="images/portfolio/MLE_Change_Password.png" alt=""  ></a>
-                    </div>
-                </div>
-            </div>
-            <!---========portfolio item End====-->
-
-             <!---========portfolio item Start====-->
-             <div class="portfolio-item padd-15">
-                <div class="portfolio-item-inner shadow-dark">
-                    <div class="portfolio-img">
-                        <a href="https://github.com/Saket0806"><img src="images/portfolio/MLE_EMP_CRUD.png" alt=""  ></a>
-                    </div>
-                </div>
-            </div>
-            <!---========portfolio item End====-->
-             <!---========portfolio item Start====-->
-             <div class="portfolio-item padd-15">
-                <div class="portfolio-item-inner shadow-dark">
-                    <div class="portfolio-img">
-                        <a href="https://github.com/Saket0806"><img src="images/portfolio/MLE_LEAVE.png" alt=""  ></a>
-                    </div>
-                </div>
-            </div>
-            <!---========portfolio item End====-->
-             <!---========portfolio item Start====-->
-             <div class="portfolio-item padd-15">
-                <div class="portfolio-item-inner shadow-dark">
-                    <div class="portfolio-img">
-                        <a href="https://github.com/Saket0806"><img src="images/portfolio/MLE_REIMBURSEMENT.png" alt=""  ></a>
-                    </div>
-                </div>
-            </div>
-            <!---========portfolio item End====-->
-        </div>
-</section>
-<!---========Portfolio Section End====-->
-<!---========Contact Section Start====-->
-<section class="contact section" id="contact">
-    <div class="container">
-        <form
-  action="https://formspree.io/f/mbjeraky"
-  method="POST"
->
-        <div class="row">
-            <div class="section-title padd-15">
-                <h2>Contact Me</h2>
-            </div>
-        </div> 
-        <h3 class="contact-title padd-15">If You have any Question ?</h3> 
-        <h4 class="contact-sub-title padd-15">Please Let me Know Here.</h4>
-        <div class="row">
-            <!---========Contact info item start====-->
-            <div class="contact-info-item padd-15">
-                <div class="icon"><i class="fa fa-phone"></i></div>
-                <h4>You Can Call Me</h4>
-                <p>+91 8962932340</p>
-            </div>
-            <!---========Contact info item End====-->
-             <!---========Contact info item start====-->
-             <div class="contact-info-item padd-15">
-                <div class="icon"><i class="fa fa-envelope"></i></div>
-                <h4>Email</h4>
-                <p>tsaket41@gmail.com</p>
-            </div>
-            <!---========Contact info item End====-->
-             <!---========Contact info item start====-->
-             <div class="contact-info-item padd-15">
-                <div class="icon"><i class="fa fa-map-marker-alt"></i></div>
-                <h4>Home</h4>
-                <p>Kareli M.P</p>
-            </div>
-            <!---========Contact info item End====-->
-             <!---========Contact info item start====-->
-             <div class="contact-info-item padd-15">
-                <div class="icon"><i class="fa fa-globe-europe"></i></div>
-                <h4>Linkedin</h4>
-                <p> <a > https://www.linkedin.com/in/saket-tiwari-8104a419a </a></p>
-            </div>
-            <!---========Contact info item End====-->
-        </div>
-       		
-        <h3 class="contact-title padd-15">SEND ME AN EMAIL</h3> 
-        <h4 class="contact-sub-title padd-15">I'M VERY RESPONSIVE TO MESSAGE</h4>
-         <!---========Contact Form====-->
-       
-         <div class="row">
-            <div class="contact-form padd-15">
-                <div class="row">
-                    <div class="form-item col-6 padd-15">
-                      
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" class="form-control" placeholder="Name">
-                        </div>
-                    </div>
-                    <div class="form-item col-6 padd-15">
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" class="form-control" placeholder="Email">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-item col-12 padd-15">
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject">
-                        </div>
-                    </div>
-                   </div>
-                    <div class="row">
-                        <div class="form-item col-12 padd-15">
-                            <div class="form-group">
-                                <textarea name="message" itemid="message" name="message" class="form-control" id="" placeholder="Message"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-item col-12 padd-15">
-                            <button type="submit" class="btn" >Send Message</button>
-                        </div>
-                   
-                    </div>
-                 </div>
-        </div>
-    </form>
+                                    <div class="landscape-item">
+                                        <div class="landscape-left">
+                                            <div class="date"><i class="fa fa-calendar"></i> Mar 2025 – May 2026</div>
+                                            <div class="company">
+    <a href="https://www.htinfosystems.com/" target="_blank">
+        High Tech Infosystems Pvt Ltd
+    </a>
 </div>
-</section>
-<!---========Contact Section End====-->
-</div>
-<!---========Main Content End====-->
-<!---========MAIN Container End====-->
+                                        </div>
+                                        <div class="landscape-right">
+                                            <p class="role-title">Senior Software Engineer</p>
+                                            <p class="role-client">Client: Dr. Reddy's Laboratories (Oncology Division)</p>
+                                            <ul>
+                                                <li>Managed end-to-end delivery of Chem-AI, a 6-microservice AI-driven oncology platform (Java 21, Spring Boot 3.x); reduced deployment cycle time by ~40%.</li>
+                                                <li>Implemented Redis distributed caching — cut API response time from 800 ms to under 320 ms; reduced DB lookup latency by ~60%.</li>
+                                                <li>Designed centralized audit logging framework for full data traceability and regulatory compliance across 500+ research compounds/day.</li>
+                                                <li>Built automated biological serum tracking with multi-temperature storage management (−80°C, −20°C, 4°C).</li>
+                                                <li>Developed real-time communication module using WebRTC and WebSockets for live video and low-latency data exchange.</li>
+                                                <li>Accelerated R&amp;D computational pre-selection pipelines — run time cut from 6 hours to 2.5 hours.</li>
+                                                <li>Containerized and deployed microservices using Docker and Kubernetes under CI/CD practices.</li>
+                                                <li>Mentored 5 junior developers via structured code reviews and SonarQube quality gates; improved first-pass merge rate by 25%.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
 
-<!-- =========== Style Switcher Start ============= -->
+                                    <div class="landscape-item">
+                                        <div class="landscape-left">
+                                            <div class="date"><i class="fa fa-calendar"></i> Feb 2024 – Dec 2024</div>
+                                            <div class="company">
+    <a href="https://pioneeresolutions.com/" target="_blank">
+        Pioneer e Solution Pvt Ltd
+    </a>
+</div>
+                                        </div>
+                                        <div class="landscape-right">
+                                            <p class="role-title">Java Developer</p>
+                                            <p class="role-client">
+    Client:
+    <a href="https://del.nic.in/" target="_blank">
+        National Informatics Centre (NIC)
+    </a>
+</p>
+                                            <ul>
+                                                <li>Migrated 3+ core business modules from legacy Spring MVC monolith to Spring Boot Microservices — reduced deployment complexity by 45%; release frequency improved from monthly to bi-weekly.</li>
+                                                <li>Optimized PostgreSQL schemas, stored procedures, and SQL queries for 500,000+ records; reduced avg. query execution time by 55% via strategic indexing and profiling.</li>
+                                                <li>Configured Redis session caching across 5 high-traffic modules, handling 2,000+ concurrent users.</li>
+                                                <li>Integrated Apache Kafka event pipeline for real-time sync with 4 external government databases; achieved sub-2s data propagation latency.</li>
+                                                <li>Collaborated with NIC stakeholders for requirement gathering and technical documentation across full SDLC.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="landscape-item">
+                                        <div class="landscape-left">
+                                            <div class="date"><i class="fa fa-calendar"></i> Apr 2023 – Jan 2024</div>
+                                            <div class="company"><a href="https://getepay.in/" target="_blank">Futuretek Commerce Pvt Ltd (GetePay)</a></div>
+                                        </div>
+                                        <div class="landscape-right">
+                                            <p class="role-title">Java Developer</p>
+                                            <ul>
+                                                <li>Developed 150+ REST APIs for a merchant payment platform using Spring Boot and Spring Security (JWT, RBAC); supported 500+ active merchants.</li>
+                                                <li>Built WebSocket-based real-time transaction tracking processing 10,000+ daily transactions.</li>
+                                                <li>Integrated 3 third-party payment gateways maintaining 99.9% uptime.</li>
+                                                <li>Delivered end-to-end government-sector integrations: Municipal Corporation Billing System and Balasore Auditorium Booking Portal.</li>
+                                                <li>Reduced P95 query time by 50% using Hibernate Criteria API and strategic indexing as monthly volume scaled to 100,000+ records.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="landscape-item">
+                                        <div class="landscape-left">
+                                            <div class="date"><i class="fa fa-calendar"></i> Jan 2022 – Mar 2023</div>
+                                            <div class="company"><a href="https://www.mlesystems.com/" target="_blank">MleSystems Pvt Ltd</a></div>
+                                        </div>
+                                        <div class="landscape-right">
+                                            <p class="role-title">Software Engineer</p>
+                                            <ul>
+                                                <li>Developed 10+ core backend modules for an enterprise HRMS platform: employee onboarding, biometric attendance, payroll processing — Java 8, Spring Boot, MySQL.</li>
+                                                <li>Maintained 99.5% application uptime; resolved L2/L3 production issues with avg. resolution time under 4 hours.</li>
+                                                <li>Worked in 2-week Agile sprints; consistently delivered 8+ features per sprint with production defect rate below 2%.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ===== CERTIFICATIONS (Landscape) ===== -->
+                        <div class="row">
+                            <div class="padd-15" style="width:100%">
+                                <p class="section-sub-title"><i class="fa fa-certificate"></i>&nbsp; Certifications</p>
+                                <div class="landscape-timeline">
+
+                                    <div class="landscape-item">
+                                        <div class="landscape-left">
+                                            <div class="date"><i class="fa fa-calendar"></i> 2022</div>
+                                        </div>
+                                        <div class="landscape-right">
+                                            <p class="role-title">PEGA Certified System Architect (CSA) 8.7</p>
+                                            <p style="font-size:13.5px;color:var(--text-black-700,#555);margin:4px 0 0 0">Certified in designing and developing Pega-based BPM solutions, including PRPC Flows and Business Rules.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="landscape-item">
+                                        <div class="landscape-left">
+                                            <div class="date"><i class="fa fa-calendar"></i> 2022</div>
+                                        </div>
+                                        <div class="landscape-right">
+                                            <p class="role-title">ServiceNow Certified System Administrator (CSA)</p>
+                                            <p style="font-size:13.5px;color:var(--text-black-700,#555);margin:4px 0 0 0">Certified in administering and configuring the ServiceNow platform for IT service management, incident management, and workflow automation.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="landscape-item">
+                                        <div class="landscape-left">
+                                            <div class="date"><i class="fa fa-calendar"></i> 2021</div>
+                                        </div>
+                                        <div class="landscape-right">
+                                            <p class="role-title">Java Full Stack Developer &mdash; JSpiders</p>
+                                            <p style="font-size:13.5px;color:var(--text-black-700,#555);margin:4px 0 0 0">Professional training in full-stack Java development covering Core Java, Spring Framework, REST APIs, and front-end web technologies.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ===== EDUCATION (Landscape) ===== -->
+                        <div class="row">
+                            <div class="padd-15" style="width:100%">
+                                <p class="section-sub-title"><i class="fa fa-graduation-cap"></i>&nbsp; Education</p>
+                                <div class="landscape-timeline">
+
+                                    <div class="landscape-item">
+                                        <div class="landscape-left">
+                                            <div class="date"><i class="fa fa-calendar"></i> 2016 – 2020</div>
+                                            <div class="company">R.G.P.V University, M.P.</div>
+                                        </div>
+                                        <div class="landscape-right">
+                                            <p class="role-title">B.E. in Computer Science &amp; Engineering</p>
+                                            <p style="font-size:13.5px;color:var(--text-black-700,#555);margin:4px 0 0 0">Graduated with <strong>7.32 CGPA</strong>. Developed strong foundation in data structures, algorithms, OOP, OS, and software engineering principles.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="landscape-item">
+                                        <div class="landscape-left">
+                                            <div class="date"><i class="fa fa-calendar"></i> 2015 – 2016</div>
+                                            <div class="company">M.P. Board</div>
+                                        </div>
+                                        <div class="landscape-right">
+                                            <p class="role-title">12th &mdash; Higher Secondary (PCM)</p>
+                                            <p style="font-size:13.5px;color:var(--text-black-700,#555);margin:4px 0 0 0">Khajanchi Ramkali Bai Adarsha Higher Secondary School, Kareli.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="landscape-item">
+                                        <div class="landscape-left">
+                                            <div class="date"><i class="fa fa-calendar"></i> 2014 – 2015</div>
+                                            <div class="company">CBSE Board</div>
+                                        </div>
+                                        <div class="landscape-right">
+                                            <p class="role-title">10th &mdash; Secondary Education</p>
+                                            <p style="font-size:13.5px;color:var(--text-black-700,#555);margin:4px 0 0 0">Smt. Prema Devi Kharya English School, Kareli.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ===== PERSONAL INFO CARDS (Bottom) ===== -->
+                        <div class="row">
+                            <div class="padd-15" style="width:100%">
+                                <p class="section-sub-title"><i class="fa fa-id-card"></i>&nbsp; Personal Information</p>
+                                <div class="personal-info-grid">
+                                    <div class="info-card">
+                                        <i class="fa fa-birthday-cake ic-icon"></i>
+                                        <div class="ic-body">
+                                            <div class="ic-label">Birthday</div>
+                                            <div class="ic-value">06 June 1998</div>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <i class="fa fa-user ic-icon"></i>
+                                        <div class="ic-body">
+                                            <div class="ic-label">Age</div>
+                                            <div class="ic-value">27</div>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <i class="fab fa-linkedin ic-icon"></i>
+                                        <div class="ic-body">
+                                            <div class="ic-label">LinkedIn</div>
+                                            <div class="ic-value"><a href="https://www.linkedin.com/in/saket-tiwari-8104a419a" target="_blank">linkedin.com/in/saket-tiwari</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <i class="fa fa-envelope ic-icon"></i>
+                                        <div class="ic-body">
+                                            <div class="ic-label">Email</div>
+                                            <div class="ic-value"><a href="mailto:tsaket41@gmail.com">tsaket41@gmail.com</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <i class="fa fa-graduation-cap ic-icon"></i>
+                                        <div class="ic-body">
+                                            <div class="ic-label">Degree</div>
+                                            <div class="ic-value">Bachelor of Engineering (CSE)</div>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <i class="fa fa-phone ic-icon"></i>
+                                        <div class="ic-body">
+                                            <div class="ic-label">Phone</div>
+                                            <div class="ic-value">+91 8962932340</div>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <i class="fa fa-map-marker-alt ic-icon"></i>
+                                        <div class="ic-body">
+                                            <div class="ic-label">Location</div>
+                                            <div class="ic-value">Jabalpur, M.P.</div>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <i class="fa fa-check-circle ic-icon"></i>
+                                        <div class="ic-body">
+                                            <div class="ic-label">Availability</div>
+                                            <div class="ic-value">Immediate Joining &nbsp;|&nbsp; Open to Relocate</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="margin-top:20px">
+                                    <a href="#contact" class="btn hire-me">Hire Me</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SERVICES ===== -->
+        <section class="service section" id="services">
+            <div class="container">
+                <div class="row">
+                    <div class="section-title padd-15">
+                        <h2>What I Do</h2>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="service-item padd-15">
+                        <div class="service-item-inner">
+                            <div class="icon"><i class="fa fa-layer-group"></i></div>
+                            <h4>Microservices Architecture</h4>
+                            <p>Designing and building distributed, fault-tolerant microservices using Spring Boot, Apache Kafka, and Spring Cloud &mdash; built for scale and high availability.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-item padd-15">
+                        <div class="service-item-inner">
+                            <div class="icon"><i class="fa fa-code"></i></div>
+                            <h4>Backend Development</h4>
+                            <p>Delivering high-performance REST APIs, WebSocket integrations, and secure server-side systems using Java and the Spring ecosystem.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-item padd-15">
+                        <div class="service-item-inner">
+                            <div class="icon"><i class="fa fa-database"></i></div>
+                            <h4>Database Optimization</h4>
+                            <p>Schema design, query profiling, indexing strategies, and performance tuning for PostgreSQL, MySQL, and MongoDB at enterprise scale.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-item padd-15">
+                        <div class="service-item-inner">
+                            <div class="icon"><i class="fa fa-stream"></i></div>
+                            <h4>Event-Driven Systems</h4>
+                            <p>Building real-time event pipelines using Apache Kafka for high-throughput, low-latency data processing and cross-service communication.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-item padd-15">
+                        <div class="service-item-inner">
+                            <div class="icon"><i class="fa fa-cloud"></i></div>
+                            <h4>Cloud &amp; DevOps</h4>
+                            <p>Containerization with Docker and Kubernetes, CI/CD pipeline setup with Jenkins, and cloud deployments on AWS (EC2, S3, RDS).</p>
+                        </div>
+                    </div>
+
+                    <div class="service-item padd-15">
+                        <div class="service-item-inner">
+                            <div class="icon"><i class="fa fa-users"></i></div>
+                            <h4>Tech Mentorship &amp; Leadership</h4>
+                            <p>Mentoring junior developers, conducting structured code reviews, enforcing quality gates via SonarQube, and driving Agile sprint delivery.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PORTFOLIO ===== -->
+        <section class="portfolio section" id="portfolio">
+            <div class="container">
+                <div class="row">
+                    <div class="section-title padd-15">
+                        <h2>Project Highlights</h2>
+                    </div>
+                </div>
+
+                <div class="proj-cards-wrapper">
+
+                    <!-- Card 1: Chem-AI -->
+                    <div class="proj-card">
+                        <div class="proj-card-header">
+                            <div class="proj-card-icon"><i class="fa fa-flask"></i></div>
+                            <div>
+                                <div class="proj-card-title">Chem-AI: Oncology Drug Discovery Platform</div>
+                                <div class="proj-card-meta">
+                                    <span><i class="fa fa-building"></i> High Tech Infosystems &mdash; Dr. Reddy's Laboratories</span>
+                                    <span><i class="fa fa-calendar"></i> Mar 2025 &ndash; May 2026</span>
+                                    <span class="proj-badge proj-badge-full">Full Time &bull; Onsite</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-card-tech">
+                            <span>Java 21</span><span>Spring Boot 3.x</span><span>Apache Kafka</span><span>Redis</span><span>PostgreSQL</span><span>Docker</span><span>Kubernetes</span><span>Spring Cloud</span><span>Resilience4j</span><span>WebRTC</span><span>WebSocket</span>
+                        </div>
+                        <div class="proj-card-body">
+                            <p>An AI-driven oncology platform built across 6 Spring Boot microservices for pharmaceutical compound screening, biological serum tracking, and drug candidate pre-selection. Handles multi-temperature biological sample storage (&minus;80&deg;C, &minus;20&deg;C, 4&deg;C) with automated tracking and full audit trails, processing 500+ biological samples per day.</p>
+                        </div>
+                        <div class="proj-card-outcomes">
+                            <div class="proj-outcome-title"><i class="fa fa-chart-line"></i> Key Outcomes</div>
+                            <div class="proj-outcomes-grid">
+                                <div class="proj-outcome-item"><span class="proj-outcome-val">65%</span><span class="proj-outcome-label">Less manual screening time</span></div>
+                                <div class="proj-outcome-item"><span class="proj-outcome-val">6h → 2.5h</span><span class="proj-outcome-label">Pipeline run time</span></div>
+                                <div class="proj-outcome-item"><span class="proj-outcome-val">800ms → 320ms</span><span class="proj-outcome-label">API response time</span></div>
+                                <div class="proj-outcome-item"><span class="proj-outcome-val">40%</span><span class="proj-outcome-label">Faster deployment cycle</span></div>
+                            </div>
+                        </div>
+                        <div class="proj-card-roles">
+                            <div class="proj-role-title"><i class="fa fa-user-cog"></i> Role &amp; Responsibilities</div>
+                            <ul>
+                                <li>Led end-to-end architecture and delivery of all 6 microservices</li>
+                                <li>Designed centralized audit logging framework for regulatory compliance</li>
+                                <li>Implemented Redis distributed caching; built WebRTC/WebSocket real-time module</li>
+                                <li>Containerized services with Docker &amp; Kubernetes under CI/CD pipeline</li>
+                                <li>Mentored 5 junior developers via structured code reviews &amp; SonarQube gates</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: TMP -->
+                    <div class="proj-card">
+                        <div class="proj-card-header">
+                            <div class="proj-card-icon"><i class="fa fa-landmark"></i></div>
+                            <div>
+                                <div class="proj-card-title">Training Management Portal (TMP)</div>
+                                <div class="proj-card-meta">
+                                    <span><i class="fa fa-building"></i> Pioneer e Solution &mdash; National Informatics Centre (NIC)</span>
+                                    <span><i class="fa fa-calendar"></i> Feb 2024 &ndash; Dec 2024</span>
+                                    <span class="proj-badge proj-badge-full">Full Time &bull; Delhi Onsite</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-card-tech">
+                            <span>Java</span><span>Spring Boot</span><span>Spring MVC</span><span>Apache Kafka</span><span>PostgreSQL</span><span>Redis</span><span>JSP</span><span>Swagger</span>
+                        </div>
+                        <div class="proj-card-body">
+                            <p>A government-grade microservices-based national training portal (<a href="https://trainingonline.gov.in/" target="_blank">trainingonline.gov.in</a>) managing 50,000+ participant registrations across central government departments, with real-time sync to 4 external government databases via Apache Kafka event pipelines and national enrollment dashboards.</p>
+                        </div>
+                        <div class="proj-card-outcomes">
+                            <div class="proj-outcome-title"><i class="fa fa-chart-line"></i> Key Outcomes</div>
+                            <div class="proj-outcomes-grid">
+                                <div class="proj-outcome-item"><span class="proj-outcome-val">70%</span><span class="proj-outcome-label">Less manual enrollment time</span></div>
+                                <div class="proj-outcome-item"><span class="proj-outcome-val">Sub 2s</span><span class="proj-outcome-label">Data propagation latency</span></div>
+                                <div class="proj-outcome-item"><span class="proj-outcome-val">55%</span><span class="proj-outcome-label">Query time reduction</span></div>
+                                <div class="proj-outcome-item"><span class="proj-outcome-val">Monthly → Bi-weekly</span><span class="proj-outcome-label">Release frequency</span></div>
+                            </div>
+                        </div>
+                        <div class="proj-card-roles">
+                            <div class="proj-role-title"><i class="fa fa-user-cog"></i> Role &amp; Responsibilities</div>
+                            <ul>
+                                <li>Migrated 3+ legacy modules from Spring MVC monolith to Spring Boot Microservices</li>
+                                <li>Optimized PostgreSQL schemas for 500,000+ records with strategic indexing</li>
+                                <li>Configured Redis session caching handling 2,000+ concurrent users</li>
+                                <li>Integrated Kafka event pipeline; collaborated with NIC stakeholders throughout SDLC</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: GetePay -->
+                    <div class="proj-card">
+                        <div class="proj-card-header">
+                            <div class="proj-card-icon"><i class="fa fa-credit-card"></i></div>
+                            <div>
+                                <div class="proj-card-title">GetePay Merchant Payment Platform</div>
+                                <div class="proj-card-meta">
+                                    <span><i class="fa fa-building"></i> Futuretek Commerce Pvt Ltd</span>
+                                    <span><i class="fa fa-calendar"></i> Apr 2023 &ndash; Jan 2024</span>
+                                    <span class="proj-badge proj-badge-full">Full Time &bull; Onsite</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-card-tech">
+                            <span>Java 8</span><span>Spring Boot</span><span>Spring Security (JWT, RBAC)</span><span>WebSocket</span><span>MySQL</span><span>Hibernate / JPA</span><span>Criteria Builder</span>
+                        </div>
+                        <div class="proj-card-body">
+                            <p>A multi-service payment gateway and merchant management platform supporting 100,000+ monthly transactions, automated billing, and secure vendor onboarding for 500+ active merchants. Includes government-sector extensions: Municipal Corporation Billing System and Balasore Auditorium Booking Portal — delivered end-to-end.</p>
+                        </div>
+                        <div class="proj-card-outcomes">
+                            <div class="proj-outcome-title"><i class="fa fa-chart-line"></i> Key Outcomes</div>
+                            <div class="proj-outcomes-grid">
+                                <div class="proj-outcome-item"><span class="proj-outcome-val">99.9%</span><span class="proj-outcome-label">Platform uptime</span></div>
+                                <div class="proj-outcome-item"><span class="proj-outcome-val">50%</span><span class="proj-outcome-label">P95 query time reduction</span></div>
+                                <div class="proj-outcome-item"><span class="proj-outcome-val">10,000+</span><span class="proj-outcome-label">Daily transactions tracked</span></div>
+                                <div class="proj-outcome-item"><span class="proj-outcome-val">150+</span><span class="proj-outcome-label">REST APIs developed</span></div>
+                            </div>
+                        </div>
+                        <div class="proj-card-roles">
+                            <div class="proj-role-title"><i class="fa fa-user-cog"></i> Role &amp; Responsibilities</div>
+                            <ul>
+                                <li>Developed 150+ REST APIs; integrated 3 third-party payment gateways</li>
+                                <li>Built WebSocket-based real-time transaction tracking module</li>
+                                <li>Handled complete client engagement for government-sector modules</li>
+                                <li>Performed database query profiling and optimization using Criteria Builder</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: HIMUDA -->
+                    <div class="proj-card">
+                        <div class="proj-card-header">
+                            <div class="proj-card-icon"><i class="fa fa-rupee-sign"></i></div>
+                            <div>
+                                <div class="proj-card-title">HIMUDA Employee Payment System</div>
+                                <div class="proj-card-meta">
+                                    <span><i class="fa fa-building"></i> Futuretek Commerce &mdash; Himachal Government</span>
+                                    <span><i class="fa fa-calendar"></i> Aug 2023 &ndash; Jan 2024</span>
+                                    <span class="proj-badge proj-badge-full">Full Time &bull; Onsite</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-card-tech">
+                            <span>Java 8</span><span>Spring Boot</span><span>JPA</span><span>MySQL</span><span>React JS</span><span>Linux</span><span>Git</span>
+                        </div>
+                        <div class="proj-card-body">
+                            <p>An employee payment management system for the Himachal State Urban Development Authority (HIMUDA), streamlining employee and employer records, automated PF calculation with interest, and secure payment processing via the GetePay gateway — ensuring transparency, regulatory compliance, and robust financial reporting.</p>
+                        </div>
+                        <div class="proj-card-roles">
+                            <div class="proj-role-title"><i class="fa fa-user-cog"></i> Role &amp; Responsibilities</div>
+                            <ul>
+                                <li>API development, software maintenance, debugging, and performance tuning</li>
+                                <li>Ensured stability, performance, and bug-free operation of all Java-based services end-to-end</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: HRMS -->
+                    <div class="proj-card">
+                        <div class="proj-card-header">
+                            <div class="proj-card-icon"><i class="fa fa-users-cog"></i></div>
+                            <div>
+                                <div class="proj-card-title">Enterprise HRMS Platform</div>
+                                <div class="proj-card-meta">
+                                    <span><i class="fa fa-building"></i> <a href="https://www.mlesystems.com/" target="_blank">MleSystems Pvt Ltd</a></span>
+                                    <span><i class="fa fa-calendar"></i> Jan 2022 &ndash; Mar 2023</span>
+                                    <span class="proj-badge proj-badge-full">Full Time &bull; Jaipur Onsite</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-card-tech">
+                            <span>Java 8</span><span>Spring Boot</span><span>Spring MVC</span><span>MySQL</span><span>Hibernate / JPA</span>
+                        </div>
+                        <div class="proj-card-body">
+                            <p>A comprehensive Human Resource Management System covering the full employee lifecycle — onboarding, biometric attendance calculation, leave management, reimbursement tracking, and complex payroll processing with automated wage computation and payslip generation.</p>
+                        </div>
+                        <div class="proj-card-outcomes">
+                            <div class="proj-outcome-title"><i class="fa fa-chart-line"></i> Key Outcomes</div>
+                            <div class="proj-outcomes-grid">
+                                <div class="proj-outcome-item"><span class="proj-outcome-val">99.5%</span><span class="proj-outcome-label">Application uptime</span></div>
+                                <div class="proj-outcome-item"><span class="proj-outcome-val">&lt; 2%</span><span class="proj-outcome-label">Production defect rate</span></div>
+                                <div class="proj-outcome-item"><span class="proj-outcome-val">&lt; 4hrs</span><span class="proj-outcome-label">L2/L3 issue resolution</span></div>
+                                <div class="proj-outcome-item"><span class="proj-outcome-val">8+</span><span class="proj-outcome-label">Features per sprint</span></div>
+                            </div>
+                        </div>
+                        <div class="proj-card-roles">
+                            <div class="proj-role-title"><i class="fa fa-user-cog"></i> Role &amp; Responsibilities</div>
+                            <ul>
+                                <li>Developed 10+ core backend modules in 2-week Agile sprints</li>
+                                <li>Maintained DB monitoring and API performance tuning for 99.5% uptime</li>
+                                <li>Maintained technical documentation; supported knowledge transfer during team onboarding</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div><!-- /proj-cards-wrapper -->
+
+
+
+            </div>
+        </section>
+
+        <!-- ===== CONTACT ===== -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <form action="https://formspree.io/f/mbjeraky" method="POST">
+
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2>Contact Me</h2>
+                        </div>
+                    </div>
+
+                    <h3 class="contact-title padd-15">Have a Question or Opportunity?</h3>
+                    <h4 class="contact-sub-title padd-15">I'd love to hear from you. Let's connect.</h4>
+
+                    <div class="row">
+                        <div class="contact-info-item padd-15">
+                            <div class="icon"><i class="fa fa-phone"></i></div>
+                            <h4>Call Me</h4>
+                            <p>+91 8962932340</p>
+                        </div>
+                        <div class="contact-info-item padd-15">
+                            <div class="icon"><i class="fa fa-envelope"></i></div>
+                            <h4>Email</h4>
+                            <p>tsaket41@gmail.com</p>
+                        </div>
+                        <div class="contact-info-item padd-15">
+                            <div class="icon"><i class="fa fa-map-marker-alt"></i></div>
+                            <h4>Location</h4>
+                            <p>Jabalpur, M.P &mdash; Open to Relocate</p>
+                        </div>
+                        <div class="contact-info-item padd-15">
+                            <div class="icon"><i class="fa fa-globe-europe"></i></div>
+                            <h4>LinkedIn</h4>
+                            <p>
+                                <a href="https://www.linkedin.com/in/saket-tiwari-8104a419a" target="_blank">
+                                    linkedin.com/in/saket-tiwari
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3 class="contact-title padd-15">Send Me a Message</h3>
+                    <h4 class="contact-sub-title padd-15">I'm very responsive &mdash; expect to hear back quickly.</h4>
+
+                    <div class="row">
+                        <div class="contact-form padd-15">
+                            <div class="row">
+                                <div class="form-item col-6 padd-15">
+                                    <div class="form-group">
+                                        <input type="text" id="name" name="name" class="form-control" placeholder="Your Name">
+                                    </div>
+                                </div>
+                                <div class="form-item col-6 padd-15">
+                                    <div class="form-group">
+                                        <input type="email" id="email" name="email" class="form-control" placeholder="Your Email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-item col-12 padd-15">
+                                    <div class="form-group">
+                                        <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-item col-12 padd-15">
+                                    <div class="form-group">
+                                        <textarea name="message" class="form-control" placeholder="Your Message"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-item col-12 padd-15">
+                                    <button type="submit" class="btn">Send Message</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
+    </div>
+
+</div>
+
+<!-- Style Switcher -->
 <div class="style-switcher">
     <div class="style-switcher-toggler s-icon">
         <i class="fas fa-cog fa-spin"></i>
@@ -587,17 +1099,11 @@ resource management, ensuring quality control, and achieving project objectives.
         <span class="color-5" onclick="setActiveStyle('color-5')"></span>
     </div>
 </div>
-<!-- =========== Style Switcher End ============= -->
-    <!---JS Files-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>
-    <script src="js/script.js"></script>
-    <script src="js/style-switcher.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
 
-
-
-
-   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>
+<script src="js/script.js"></script>
+<script src="js/style-switcher.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
 
 </body>
 </html>
